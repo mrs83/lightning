@@ -15,7 +15,7 @@ static void do_json_tok_bitcoin_amount(const char* val, uint64_t expected)
 	tok.start = 0;
 	tok.end = strlen(val);
 
-	fprintf(stderr, "do_json_tok_bitcoin_amount(\"%s\", %lu): ", val, expected);
+	fprintf(stderr, "do_json_tok_bitcoin_amount(\"%s\", %"PRIu64"): ", val, expected);
 
 	assert(json_tok_bitcoin_amount(val, &tok, &amount) == true);
 	assert(amount == expected);
